@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Absolute Cinema</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="dashboard">
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2>🎬 Absolute Cinema</h2>
+  <div class="nav-actions">
+    <button onclick="location.href='watchlist.html'">❤️ Watchlist</button>
+    <button onclick="location.href='profile.html'">👤 Profile</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</nav>
+
+<!-- SEARCH -->
+<div class="search-box">
+
+  <input
+    id="movieName"
+    type="text"
+    placeholder="Search movies or series..."
+    oninput="showSuggestions(this.value)"
+  />
+
+  <button onclick="searchMovie()">Search</button>
+
+  <div id="suggestions" class="suggestions hidden"></div>
+
+</div>
+
+<!-- MOVIE RESULT -->
+<section id="movieSection">
+  <div id="movie"></div>
+
+  <div id="seriesSection" class="hidden">
+
+  <h3 class="section-title">📺 Seasons</h3>
+  <div id="seasonsBox" class="season-row"></div>
+
+  <h3 class="section-title">🎬 Episodes</h3>
+  <div id="episodesBox"></div>
+
+  </div>
+
+  <section id="similarSection" class="hidden">
+  <h3 class="section-title">🎯 Similar Movies You May Like</h3>
+  <div id="similarRow" class="movie-row"></div>
+</section>
+
+<!-- REVIEW BOX -->
+  <div id="reviewSection" class="hidden">
+    <h3>📝 Add Your Review</h3>
+    <div class="stars">
+   <span onclick="setRating(1)">★</span>
+   <span onclick="setRating(2)">★</span>
+   <span onclick="setRating(3)">★</span>
+   <span onclick="setRating(4)">★</span>
+   <span onclick="setRating(5)">★</span>
+    </div>
+
+    <textarea id="comment" placeholder="Write your review..."></textarea>
+    <button onclick="addReview()">Submit Review</button>
+  </div>
+  <div id="reviews" class="review-list"></div>
+</section>
+
+<!-- SECTIONS -->
+<section>
+  <h3 class="section-title">🔥 Trending Movies</h3>
+  <div id="movieGrid" class="movie-grid"></div>
+</section>
+
+<section>
+  <h3 class="section-title">🏆 Top Rated Movies</h3>
+  <div id="topMovies" class="movie-row"></div>
+</section>
+
+<section>
+  <h3 class="section-title">🎥 Popular Picks</h3>
+  <div id="popularRow" class="movie-row"></div>
+</section>
+
+<section>
+  <h3 class="section-title">🌟 Editor’s Picks</h3>
+  <div id="recommendationRow" class="movie-row"></div>
+</section>
+
+<!-- MOVIE MODAL -->
+<div id="movieModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeMovieModal()">✖</span>
+
+    <!-- MOVIE DETAILS -->
+    <div id="modalMovie"></div>
+
+    <!-- REVIEW SECTION -->
+    <div id="modalReviewBox">
+      <h3>📝 Add Your Review</h3>
+
+      <div class="stars">
+        <span onclick="setRating(1)">★</span>
+        <span onclick="setRating(2)">★</span>
+        <span onclick="setRating(3)">★</span>
+        <span onclick="setRating(4)">★</span>
+        <span onclick="setRating(5)">★</span>
+      </div>
+
+      <textarea id="modalComment" placeholder="Write your review..."></textarea>
+      <button onclick="addReview()">Submit Review</button>
+    </div>
+
+    <div id="modalReviews"></div>
+  </div>
+</div>
+
+<!-- TRAILER MODAL -->
+<div id="trailerModal" class="modal hidden">
+  <div class="modal-content trailer-box">
+    <span class="close-btn" onclick="closeTrailer()">✖</span>
+    <iframe
+      id="trailerFrame"
+      width="100%"
+      height="400"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel | Absolute Cinema</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="dashboard">
+
+<nav class="navbar">
+  <h2>🛡 Admin Panel — Absolute Cinema</h2>
+  <button onclick="logout()">Logout</button>
+</nav>
+
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-number" id="userCount">0</div>
+    <div class="stat-label">Users</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-number" id="reviewCount">0</div>
+    <div class="stat-label">Reviews</div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-number" id="watchlistCount">0</div>
+    <div class="stat-label">Watchlist Items</div>
+  </div>
+</div>
+
+<section class="admin-container">
+
+  <div class="admin-tabs">
+    <button onclick="showTab('users')">👥 Users</button>
+<button onclick="showTab('reviews')">📝 Reviews</button>
+<button onclick="showTab('recs')">⭐ Recommendations</button>
+  </div>
+
+  <!-- USERS -->
+  <div id="users" class="admin-tab">
+    <h3>👥 Users</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+      <tbody id="usersTable"></tbody>
+    </table>
+  </div>
+
+  <!-- REVIEWS -->
+  <div id="reviews" class="admin-tab hidden">
+    <h3>📝 Reviews</h3>
+    <div id="reviewsList"></div>
+  </div>
+
+  <!-- RECOMMENDATIONS -->
+  <div id="recs" class="admin-tab hidden">
+    <h3>⭐ Recommendations</h3>
+    <div class="admin-add-rec">
+  <input id="recTitle" placeholder="Movie title (IMDb)" />
+  <input id="recReason" placeholder="Why recommend?" />
+  <button onclick="fetchFromIMDb()">🎬 Fetch IMDb</button>
+</div>
+
+    <div id="recsList"></div>
+  </div>
+
+</section>
+
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile | Absolute Cinema</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="dashboard">
+
+<nav class="navbar">
+  <h2>👤 My Profile</h2>
+  <button onclick="location.href='dashboard.html'">⬅ Back</button>
+</nav>
+
+<section class="profile-box">
+  <h3 id="profileName">Loading...</h3>
+  <div class="avatar" id="profileAvatar"></div>
+  <p id="profileRole"></p>
+
+  <div class="profile-stats">
+    <div>🎬 Reviews: <span id="reviewCount">0</span></div>
+    <div>❤️ Watchlist: <span id="watchCount">0</span></div>
+  </div>
+</section>
+
+<section>
+  <h3>📝 My Reviews</h3>
+  <div id="myReviews"></div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

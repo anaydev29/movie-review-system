@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Watchlist | Absolute Cinema</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <h2>🎬 Absolute Cinema — Watchlist</h2>
+    <button onclick="location.href='dashboard.html'">⬅ Back</button>
+  </nav>
+
+  <!-- WATCHLIST CONTENT -->
+  <section>
+    <h3 class="section-title">❤️ My Watchlist</h3>
+    <div id="watchlistGrid" class="movie-grid"></div>
+  </section>
+
+  <script src="script.js"></script>
+<script>
+  // force-load watchlist when this page opens
+  loadWatchlist();
+</script>
+
+</body>
+</html>
