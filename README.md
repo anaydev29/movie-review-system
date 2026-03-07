@@ -128,8 +128,7 @@ Open your browser at `http://localhost:3000`
 
 ## 👨‍💻 Author
 
-**Anay** — 
-https://github.com/anaydev29/movie-review-system
+**Anay** — https://github.com/anaydev29
 ---
 
 ## 📄 License
@@ -139,3 +138,4 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 ⭐ If you like this project, give it a star on GitHub!
+
