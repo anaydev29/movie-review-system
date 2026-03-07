@@ -36,12 +36,17 @@ function signup() {
   })
     .then(r => r.json())
     .then(d => {
-      if (d.error) msg.innerText = d.error;
-      else {
-        msg.innerText = "Signup successful!";
-        setTimeout(() => location.href = "login.html", 1000);
-      }
-    });
+  if (d.error) {
+    msg.innerText = d.error;
+    msg.style.color = "#ff4d4d";
+  } else {
+    msg.innerText = "✅ Signup successful! Redirecting to login...";
+    msg.style.color = "#00c853";
+    msg.style.fontSize = "15px";
+    msg.style.fontWeight = "600";
+    setTimeout(() => location.href = "login.html", 2000);
+  }
+  });
 }
 
 function login() {
