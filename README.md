@@ -77,7 +77,7 @@ backend/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Ani226/movie-review-system.git
+git clone https://github.com/anaydev29/movie-review-system.git
 
 # Navigate to backend
 cd movie-review-system
@@ -138,4 +138,5 @@ This project is open source and available under the [MIT License](LICENSE).
 ---
 
 ⭐ If you like this project, give it a star on GitHub!
+
 
