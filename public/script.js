@@ -46,7 +46,7 @@ function signup() {
     msg.style.fontWeight = "600";
     setTimeout(() => location.href = "login.html", 2000);
   }
-  });
+   });
 }
 
 function login() {

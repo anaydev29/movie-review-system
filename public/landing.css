@@ -93,3 +93,33 @@ footer {
   color: #777;
   font-size: 13px;
 }
+
+@media (max-width: 768px) {
+  /* Navbar fix */
+  .navbar {
+    flex-wrap: nowrap;
+    padding: 10px 16px;
+    gap: 8px;
+  }
+
+  .navbar h2,
+  .nav-brand {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .nav-links,
+  .nav-actions {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .nav-actions button,
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
