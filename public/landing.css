@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-body.landing {
+/* FIXED: was body.landing but HTML has body.landing-page */
+body.landing-page {
   min-height: 100vh;
   font-family: "Segoe UI", Arial, sans-serif;
   background: radial-gradient(circle at top, #1a1a1a, #000);
@@ -20,10 +21,16 @@ body.landing {
   padding: 20px 40px;
 }
 
+.landing-nav h1 {
+  font-size: 20px;
+  white-space: nowrap;
+}
+
 .landing-nav a {
   color: white;
   text-decoration: none;
   margin-left: 15px;
+  white-space: nowrap;
 }
 
 .nav-btn {
@@ -48,16 +55,23 @@ body.landing {
   font-size: 18px;
 }
 
-.description {
+.hero-desc {
   max-width: 600px;
   margin: 25px auto;
   color: #ccc;
   line-height: 1.6;
 }
 
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
 .hero-buttons button {
   padding: 12px 22px;
-  margin: 10px;
   border-radius: 8px;
   border: none;
   font-size: 15px;
@@ -69,9 +83,10 @@ body.landing {
 .hero-buttons .secondary {
   background: transparent;
   border: 1px solid #777;
+  color: white;
 }
 
-/* FEATURES */
+/* FEATURES - FIXED: was .feature but HTML has .feature-card */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -79,11 +94,12 @@ body.landing {
   padding: 40px 60px;
 }
 
-.feature {
-  background: rgba(255,255,255,0.08);
+.feature-card {
+  background: rgba(255, 255, 255, 0.08);
   padding: 25px;
   border-radius: 12px;
   text-align: center;
+  font-size: 15px;
 }
 
 /* FOOTER */
@@ -94,32 +110,92 @@ footer {
   font-size: 13px;
 }
 
+/* ======================
+   MOBILE RESPONSIVE
+====================== */
 @media (max-width: 768px) {
-  /* Navbar fix */
-  .navbar {
+
+  /* NAVBAR */
+  .landing-nav {
+    padding: 14px 16px;
     flex-wrap: nowrap;
-    padding: 10px 16px;
     gap: 8px;
   }
 
-  .navbar h2,
-  .nav-brand {
+  .landing-nav h1 {
     font-size: 15px;
     white-space: nowrap;
   }
 
-  .nav-links,
-  .nav-actions {
+  .landing-nav div {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 6px;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .landing-nav a {
+    margin-left: 0;
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .nav-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 15px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
     align-items: center;
   }
 
-  .nav-actions button,
-  .nav-links a {
-    padding: 6px 10px;
-    font-size: 12px;
-    white-space: nowrap;
+  .hero-buttons button {
+    width: 80%;
+  }
+
+  /* FEATURES */
+  .features {
+    grid-template-columns: 1fr;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .landing-nav h1 {
+    font-size: 13px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .hero-buttons button {
+    width: 90%;
   }
 }
