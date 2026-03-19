@@ -128,7 +128,7 @@ Open your browser at `http://localhost:3000`
 
 ## 👨‍💻 Author
 
-**Anay** — [@Anaydev29]
+**Anay** — [@anaydev29]
 
 ---
 
